@@ -1,0 +1,168 @@
+#main{
+    width:100%;
+    background-color: #5d97ad;
+    background-image: url("https://armory.visualsoldiers.com/wp-content/uploads/2021/09/parallax-scroll-animations.jpg");
+    background-size: cover;
+    
+}
+.title_font{
+  color:white;
+}
+#mainrow {
+    /* background-color: #dbdde3; */
+    display: flex;
+    height:90%;
+    margin-left:4%;
+    margin-right:4%;
+  }
+  
+  #reminder {
+    margin-top: 5%;
+    width: 20%; 
+    background-color: white;
+    border: px solid white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    margin-left: 5%; /* Set the initial margin-left in pixels for spacing */
+    margin-right:auto;
+    border-radius: 12px;
+    background-image: url("https://w0.peakpx.com/wallpaper/814/1000/HD-wallpaper-whatsapp-background-social-networks.jpg");
+  }
+
+  #reminder_title{
+    margin-top:3%;
+  }
+  
+  #task {
+    margin-top: 5%;
+    width: 30%; /* Set the initial width in pixels */
+    background-color: white;
+    border: px solid black;
+    
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    margin-left: 1%; /* Set the initial margin-left in pixels for spacing */
+    margin-right:auto;
+    text-align: center;
+    border-radius: 12px;
+    background-image: url("https://w0.peakpx.com/wallpaper/814/1000/HD-wallpaper-whatsapp-background-social-networks.jpg  ");
+
+  }
+  
+  #recommend {
+    margin-top: 5%;
+    width: 30%; /* Set the initial width in pixels */
+    background-color: whitesmoke;
+    border: 1px solid black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    margin-left: 1%; /* Set the initial margin-left in pixels for spacing */
+    margin-right:10%;
+    border-radius: 12px;
+    background-image: url("https://w0.peakpx.com/wallpaper/814/1000/HD-wallpaper-whatsapp-background-social-networks.jpg");
+
+  }
+  
+#add_task_input{
+    margin-top:5%;
+    margin-left:auto;
+    height:5%;
+    width:70%;
+    margin-right:auto;
+    border-radius:12px;;
+    
+}
+
+#add_task_button{
+  width:7%;
+  height:4%;
+  border-radius:12px;
+  margin-left: 2%;
+  
+}
+  .added-reminder-div{
+    background-color: #5d97ad;
+    margin-top:5px;
+    margin-bottom:5px;
+    color:white;
+    border-radius:12px;
+    padding:2%;
+  }
+
+
+  .added-task-div{
+    display: flex;
+    background-color: #5d97ad;;
+    margin-top:10px;
+    margin-bottom:10px;
+    padding:3%;
+    color:white;
+    border: 1px block black;
+    border-radius:12px;
+  }
+
+  #ongoing_task{
+    /* background-color: blueviolet; */
+    border: 1px solid white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    margin-top:5%;
+    height:40%;
+    border-radius: 12px;
+    width: 90%;
+
+  }
+
+  #done_task{
+    /* background-color: blueviolet; */
+    margin-top:2%;
+    height:40%;
+    
+    border: 1px solid white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    width: 90%;
+ 
+  }
+
+  .info_div{
+    width:20%;
+    height: 4%;
+    position:fixed;
+    display:block;
+  }
+  .del_button_container{
+    width:3%;
+    margin-left:auto;
+    margin-right:5%;
+  }
+
+  .del_button{
+    border-radius: 50%;
+    height:100%;
+    width:25px;
+    margin-right:1px;
+
+
+  }
+
+  #task_details{
+    /* background-color: blueviolet; */
+    margin-top:2%;
+    height:50%;
+  }
+
+  #task_recommendation{
+    margin-top:5%;
+    /* background-color: blueviolet; */
+    height:43%;
+    
+  }
+
+  .details{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 12px;
+    display:inline-block;
+    line-height: 1;
+    padding: 3%;
+    font-size:20px;
+    
+
+  }
