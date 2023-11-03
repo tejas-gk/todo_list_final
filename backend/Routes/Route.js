@@ -13,7 +13,7 @@ router.post("/signup",loginController.signup);
 //login controller 
 router.post("/login",loginController.login);
 
-router.post("/task",taskController.createTask);
+router.patch("/task",taskController.createTask);
 
 //task update
 router.patch("/updateTask",taskController.updateTask);

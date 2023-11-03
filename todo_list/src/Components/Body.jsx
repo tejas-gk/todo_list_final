@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Body.css';
 import {addNewDivToReminder} from "./TaskBox";
@@ -6,10 +6,21 @@ import { addNewDivToOngoingTask } from "./TaskBox";
 import { loadFromInput } from "./TaskBox";
 import { deleteTask } from "./TaskBox";
 import { loadDetails } from "./TaskBox";
+import axios from "axios";
 
 
 function Body() {
-  
+  const [taskTitle,setTaskTitle]=useState("")
+  const handleNewTask=async ()=>{
+    try {
+      await axios.patch("http://localhost:5000/task",{
+        TaskName:taskTitle,
+        TaskId:1
+      })
+    } catch (error) {
+      // consoe.log(error)
+    }
+  }
   return (
     <>
 
@@ -25,9 +36,10 @@ function Body() {
           </div>
           <div id="task" className="col-4 container-fluid">
             
-            <input id="add_task_input" type="text" placeholder="Enter Task"/> 
-            
-            <button id="add_task_button" onClick={loadFromInput} >+</button>
+            <input id="add_task_input" type="text" placeholder="Enter Task"
+              onChange={(e)=>setTaskTitle(e.target.value)}
+            /> 
+            <button id="add_task_button" onClick={handleNewTask} >+</button>
             <div id="ongoing_task" className="container-fluid">
                 <center><h4 className="title_font">Ongoing Task</h4></center>
             </div>

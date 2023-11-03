@@ -1,17 +1,27 @@
-const taskModel=require("../Models/taskModel");
-const UserModel=require("../Models/userModel");
-
+const Task = require("../Models/userModel");
 //new task handler
 let createTask=async(req,res)=>{//post packet end up here
-    try{
-        let data=req.body;
-        let registerTask=await taskModel.create(data);//wait for and return database data register
-        return res.status(201).send({status:true,msg:"Task data registered successfully",data:registerTask});
-
-    }catch(error){
-        return res.status(500).send({status:false,msg:"Internal Server Error"});
+        let data = req.body;
+        const newTask = new Task(data);
+      
+        newTask.save()
+        .then((savedTask) => {
+          console.log('Task saved:', savedTask);
+      
+          // Find the user by _id and associate the task with the user
+          UserData.findByIdAndUpdate('6544e54ab8364b86d2adf72b', { $push: { Tasks: savedTask._id } })
+            .then((updatedUser) => {
+              console.log('Task associated with user:', updatedUser);
+            })
+            .catch((error) => {
+              console.error('Error associating task with user:', error);
+            });
+        })
+        .catch((error) => {
+          console.error('Error saving task:', error);
+        });
     }
-};
+
 
 
 //task update handler
