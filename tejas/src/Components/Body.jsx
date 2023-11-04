@@ -13,24 +13,32 @@ function Body() {
   const [taskTitle, setTaskTitle] = useState("")
   const [tasks, setTasks] = useState([])
   useEffect(() => {
-    try {
-      const getUser = async () => {
+    const getUser = async () => {
+      try {
         const id = localStorage.getItem("id")
         if (!id) window.location.replace("/loginSignup")
-        const res=await axios.get("http://localhost:5000/allTasks/"+id, {
+        const res = await axios.get("http://localhost:5000/allTasks/" + id, {
           body: {
             id: localStorage.getItem("id")
           }
         })
-          const data=res.data
-        setTasks(data)
+        const data = res.data
+
         console.log(tasks)
+
+        setTimeout(() => {
+          console.log(tasks)
+        }
+          , 2000)
         
+        setTasks(data)
+
+        console.log(tasks)
+      } catch (error) {
+        console.log(error)
       }
-      getUser()
-    } catch (error) {
-      console.log(error)
     }
+    getUser()
   }, [])
   const handleNewTask = async () => {
     try {
@@ -40,7 +48,6 @@ function Body() {
         id: localStorage.getItem("id")
       })
       setTaskTitle("")
-      window.location.reload()
     } catch (error) {
       console.log(error)
     }
