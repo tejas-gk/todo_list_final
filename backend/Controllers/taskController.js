@@ -3,11 +3,12 @@ const UserData = require("../Models/userModel");
 //new task handler
 let createTask = async (req, res) => {
   let data = req.body;
-  console.log(data.TaskName);
+  console.log(data);
   try {
     const task = await Tasks.create({
       title: data.TaskName,
       user: data.id,
+      description: data.Description,
     });
     res.json(task);
   } catch (error) {
