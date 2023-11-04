@@ -16,7 +16,17 @@ router.post("/login",loginController.login);
 router.patch("/task",taskController.createTask);
 
 //task update
-router.patch("/updateTask",taskController.updateTask);
+router.patch("/updateTask", taskController.updateTask);
+
+router.get("/allUsers", loginController.allUsers);
+
+
+
+router.get("/allUsers/:id", loginController.user);
+
+router.get("/allTasks", taskController.allTasks);
+
+router.get("/allTasks/:id", taskController.task)
 
 
 

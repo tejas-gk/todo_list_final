@@ -98,5 +98,29 @@ let login=async(req,res)=>{
     }
 };
 
+const allUsers=async(req,res)=>{
+    try{
+        const allUsers=await userModel.find();
+        return res.status(201).send({status:true,msg:allUsers});
+    }catch(error){
+        return res.status(500).send({status:false,msg:"Internal Server Error"});
+    }
+}
+
+const user = async (req, res) => {
+    const id = req.params.id;
+    try {
+      const user = await userModel.findById(id);
+      return res.status(200).send({status:true,tasks:user});
+    } catch (error) {
+      return res.status(500).send({status:false,msg:"Internal Server Error"});
+    }
+}
+    
 //exporting functions
-module.exports={login,signup};
+module.exports = {
+    login,
+    signup,
+    allUsers,
+    user
+};

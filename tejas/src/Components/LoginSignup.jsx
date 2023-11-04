@@ -38,9 +38,12 @@ const LoginSignup = () => {
 
       toast("hello"); //doesnt work at the moment
       
-      console.log(response.data.msg) //temp
+      console.log(response.data.data._id) //temp
       //alert user
       alert(response.data.msg)
+      if (response.data.status == true) {
+        localStorage.setItem("id", response.data.data._id);
+      }
       // if(response.data.msg=="Already signed in") { //if user already signed in
       //   alert("Already signed in");
       // }
@@ -66,6 +69,10 @@ const handleLogin =async()=>{
     },{headers:{"Content-Type": "application/json",}});
     //alert user about login
     alert(response.data.msg);
+    console.log(response)
+    if (response.data.status == true) {
+      localStorage.setItem("id", response.data.data._id);
+    }
 
     if(!response){  
       console.log("no response for login");

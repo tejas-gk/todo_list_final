@@ -1,21 +1,26 @@
 const mongoose=require("mongoose");
 
 const taskSchema=new mongoose.Schema({
-    TaskName:{
+    title:{
         type:String,
         required:false,
     },
-    Description:{
+    description:{
         type:String,
         required:false,
     },
-    Reminder:{
+    reminder:{
         type:String,
         required:false,
     },
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:"UserData",
+    }
 
 },{timestamps:true});
 //creating new mongoose schema
-// module.exports=new mongoose.model("Tasks",taskSchema);
+module.exports=new mongoose.model("Tasks",taskSchema);
 //exporting taskSchema
-module.exports={taskSchema};
+// module.exports={taskSchema};

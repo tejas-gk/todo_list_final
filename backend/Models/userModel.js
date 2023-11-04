@@ -15,10 +15,6 @@ const userScheme=new mongoose.Schema({
         type:String,
         required:true,
     },
-    Tasks:{
-        type:taskModel.taskSchema,
-        required:false,
-    }
 },{timestamps:true});
 
 module.exports=new mongoose.model("UserData",userScheme);
